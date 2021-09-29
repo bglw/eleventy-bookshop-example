@@ -8,5 +8,11 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy('assets');
 
+	eleventyConfig.cloudcannonOptions = {
+		dir: {
+			pages: 'pages'
+		}
+	};
+
 	eleventyConfig.addPlugin(pluginCloudCannonBookshop);
 };
