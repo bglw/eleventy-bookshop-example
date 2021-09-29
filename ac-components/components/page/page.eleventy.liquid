@@ -2,7 +2,7 @@
 <div class="c-page theme-{{ page_theme | slug | default: 'dark' }}">
 
 {% for block in content_blocks %}
-    {% bookshop {{block._bookshop_name}} bind: block %}
+    {% bookshop "{{block._bookshop_name}}" bind: block %}
 {% endfor %}
 
 </div>
