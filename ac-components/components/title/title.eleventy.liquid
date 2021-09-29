@@ -1,0 +1,8 @@
+<div class="c-title">
+    <h1 class="c-title__title">
+        {{ title }}
+    </h1>
+    {% for tag in tags %}
+        {% bookshop "tag" bind: tag %}
+    {% endfor %}
+</div>

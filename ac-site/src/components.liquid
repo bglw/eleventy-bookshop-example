@@ -1,0 +1,21 @@
+---
+permalink: /components/
+layout: "layouts/default.liquid"
+published: false
+---
+
+<!-- 
+    The bookshop_browser tag loads an 
+    interactive component library on your website.
+-->
+{% if site.env == "production" %}
+
+    <!-- Hosted Javascript built by .cloudcannon/prebuild script -->
+    {% bookshop_browser /assets/bookshop-hosted.js %}
+
+{% else %}
+
+    <!-- Local Javascript run through npm start -->
+    {% bookshop_browser :6061 %}
+
+{% endif %}
