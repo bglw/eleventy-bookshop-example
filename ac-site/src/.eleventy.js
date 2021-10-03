@@ -8,8 +8,9 @@ module.exports = function (eleventyConfig) {
 	}));
 
 	// passthroughCopy is relative to the CWD, so we need to use the path when on CloudCannon
-	const assetPath = path.join(process.env['CC_ELEVENTY_INPUT'] || '', 'assets');
-	eleventyConfig.addPassthroughCopy(assetPath);
+	const assetPath = (input) =>  path.join(process.env['CC_ELEVENTY_INPUT'] || '', input);
+	eleventyConfig.addPassthroughCopy(assetPath('assets'));
+	eleventyConfig.addPassthroughCopy(assetPath('_cloudcannon'));
 
 	eleventyConfig.cloudcannonOptions = {
 		dir: {
